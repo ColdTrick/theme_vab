@@ -222,6 +222,11 @@
 	border-radius: 4px 4px 0 0;
 }
 
+
+.elgg-menu-site-default > .elgg-state-selected > a {
+	font-weight: bold;
+}
+
 .elgg-menu-site-more {
 	position: relative;
 	left: -1px;
