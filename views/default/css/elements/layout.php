@@ -47,6 +47,7 @@
 }
 .elgg-page-topbar > .elgg-inner {
 	padding: 0 10px;
+	width: 960px;
 }
 
 /***** PAGE MESSAGES ******/
