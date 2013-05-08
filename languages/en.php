@@ -8,7 +8,7 @@ $english = array(
 	'theme_vab:menu:speerpunten:mine' => 'My Speerpunten',
 	'theme_vab:menu:speerpunten:mine:sidebar' => '',
 	'theme_vab:menu:werkgroep' => 'De Werkgroep',
-	'theme_vab:menu:activity' => 'Activity',
+	'theme_vab:menu:activity' => 'Laatste bijdragen (alle)',
 	'theme_vab:menu:nieuws' => 'News',
 
 	'theme_vab:groups:collapse' => 'Collapse',

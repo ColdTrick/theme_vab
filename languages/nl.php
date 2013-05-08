@@ -5,7 +5,6 @@ $dutch = array(
 	'theme_vab:menu:speerpunten:all' => 'Alle Speerpunten',
 	'theme_vab:menu:speerpunten:mine' => 'Mijn Speerpunten',
 	'theme_vab:menu:werkgroep' => 'De Werkgroep',
-	'theme_vab:menu:activity' => 'Activiteiten',
 	'theme_vab:menu:nieuws' => 'Nieuws',
 
 	'theme_vab:groups:collapse' => 'Inklappen',
