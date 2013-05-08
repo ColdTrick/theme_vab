@@ -30,8 +30,9 @@
 
 .theme-vab-site-link {
 	display: inline-block;
-	width: 100%;
-	height: 100%;
+	width: 600px;
+	height: 50px;
+	margin-left: 160px;
 }
 
 #profile_manager_register_left {
