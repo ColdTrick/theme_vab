@@ -140,3 +140,7 @@ form.elgg-search-header input[type="text"]:active {
 	float: none;
 	width: auto;
 }
+
+.elgg-menu-page .elgg-menu-item-official-validator {
+	display: none;
+}
