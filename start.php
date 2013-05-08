@@ -75,7 +75,7 @@
 	}
 	
 	function theme_vab_setup_menu($hook, $entity_type, $returnvalue, $params){
-		$menu_items = array(ElggMenuItem::factory(array("name" => "groups",  "href" => "/groups/all", "text" => elgg_echo("groups:all"))));
+		$menu_items = array(ElggMenuItem::factory(array("name" => "groups",  "href" => "/groups/all", "text" => elgg_echo("theme_vab:menu:groups"))));
 		
 		$menu_items[] = ElggMenuItem::factory(array("name" => "werkgroep",  "href" => "/werkgroep", "text" => elgg_echo("theme_vab:menu:werkgroep")));
 		$menu_items[] = ElggMenuItem::factory(array("name" => "activity",  "href" => "/activity?type=object", "text" => elgg_echo("theme_vab:menu:activity")));
