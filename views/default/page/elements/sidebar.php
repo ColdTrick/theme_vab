@@ -13,17 +13,17 @@
 $current_page_url = current_page_url();
 
 if(stristr($current_page_url, "/groups/all")){
-	$sidebar_key = "theme_vab:menu:speerpunten:all:sidebar";
-	$sidebar_text = elgg_echo($sidebar_key);
-	if($sidebar_text != $sidebar_key){
-		echo elgg_view_module("aside", "", $sidebar_text);
-	}
+// 	$sidebar_key = "theme_vab:menu:speerpunten:all:sidebar";
+// 	$sidebar_text = elgg_echo($sidebar_key);
+// 	if($sidebar_text != $sidebar_key){
+// 		echo elgg_view_module("aside", "", $sidebar_text);
+// 	}
 } elseif(stristr($current_page_url, "/groups/member")){
-	$sidebar_key = "theme_vab:menu:speerpunten:mine:sidebar";
-	$sidebar_text = elgg_echo($sidebar_key);
-	if($sidebar_text != $sidebar_key){
-		echo elgg_view_module("aside", "", $sidebar_text);
-	}
+// 	$sidebar_key = "theme_vab:menu:speerpunten:mine:sidebar";
+// 	$sidebar_text = elgg_echo($sidebar_key);
+// 	if($sidebar_text != $sidebar_key){
+// 		echo elgg_view_module("aside", "", $sidebar_text);
+// 	}
 } elseif(stristr($current_page_url, "/werkgroep") && elgg_in_context("static")){
 	$groups = array();
 	if($group = get_entity(11962952)){
