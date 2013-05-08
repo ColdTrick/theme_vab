@@ -45,8 +45,7 @@
 	height: 24px;
 	z-index: 9000;
 }
-.elgg-page-topbar > .elgg-inner {
-	padding: 0 10px;
+.elgg-page .elgg-page-topbar > .elgg-inner {
 	width: 960px;
 }
 
