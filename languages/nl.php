@@ -9,6 +9,11 @@ $dutch = array(
 
 	'theme_vab:groups:collapse' => 'Inklappen',
 	'theme_vab:groups:expand' => 'Uitklappen',
+	
+	'best_practices:edit:groups' => "Groep (Thema)",
+	'best_practices:edit:groups:description' => "Type de naam van tenminste één groep (thema) en selecteer deze uit de lijst",
+	'best_practices:listing:created' => 'Geplaatst op',
+	
 );
 
 add_translation("nl", $dutch);

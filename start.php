@@ -1,11 +1,13 @@
-<?php 
-	define("THEME_COLOR_1", "FFFFE6"); // (background) yellow 
+<?php
+	define("THEME_COLOR_1", "FFFFE6"); // (background) yellow
 	define("THEME_COLOR_2", "422918"); // font brown
 	define("THEME_COLOR_3", "FF5733"); // title red/orange
 	define("THEME_COLOR_4", "FFECB1"); // zijbalk donker geel
 	define("THEME_COLOR_5", "DBE0B7"); // zacht groen
 	
 	define("THEME_GRAPHICS", elgg_get_site_url() . "mod/theme_vab/_graphics/");
+	
+	require_once(dirname(__FILE__) . "/lib/hooks.php");
 	
 	elgg_register_event_handler('init', 'system', 'theme_vab_init');
 	elgg_register_event_handler('pagesetup', 'system', 'theme_vab_pagesetup', 1000);
@@ -16,11 +18,12 @@
 		
 		elgg_register_page_handler('profile', 'theme_vab_profile_page_handler');
 		
-		elgg_register_plugin_hook_handler("register", "menu:site", "theme_vab_setup_menu");	
-		elgg_register_plugin_hook_handler("prepare", "menu:owner_block", "theme_vab_prepare_owner_block_menu");	
+		elgg_register_plugin_hook_handler("register", "menu:site", "theme_vab_setup_menu");
+		elgg_register_plugin_hook_handler("prepare", "menu:owner_block", "theme_vab_prepare_owner_block_menu");
+		elgg_register_plugin_hook_handler("route", "best_practice", "theme_vab_route_best_practices_hook");
 	
 		// handle index page
-		elgg_register_plugin_hook_handler('index', 'system', 'theme_vab_custom_index');	
+		elgg_register_plugin_hook_handler('index', 'system', 'theme_vab_custom_index');
 	}
 	
 	function theme_vab_pagesetup(){
@@ -31,7 +34,7 @@
 	}
 	
 	function theme_vab_custom_index($hook_name, $entity_type, $return_value, $parameters){
-		forward("/groups/all");
+		forward("groups/all");
 	}
 	
 	/**
@@ -74,49 +77,4 @@
 		return true;
 	}
 	
-	function theme_vab_setup_menu($hook, $entity_type, $returnvalue, $params){
-		$menu_items = array(ElggMenuItem::factory(array("name" => "groups",  "href" => "/groups/all", "text" => elgg_echo("theme_vab:menu:groups"))));
-		
-		$menu_items[] = ElggMenuItem::factory(array("name" => "werkgroep",  "href" => "/werkgroep", "text" => elgg_echo("theme_vab:menu:werkgroep")));
-		$menu_items[] = ElggMenuItem::factory(array("name" => "activity",  "href" => "/activity?type=object", "text" => elgg_echo("theme_vab:menu:activity")));
-		$menu_items[] =	ElggMenuItem::factory(array("name" => "nieuws",  "href" => "/search?q=nieuws&search_type=tags", "text" => elgg_echo("theme_vab:menu:nieuws")));
-		
-		if(elgg_is_admin_logged_in()){
-			$menu_items[] =	ElggMenuItem::factory(array("name" => "admin",  "href" => "/admin", "text" => elgg_echo("admin")));
-		}
-		if(!elgg_is_logged_in()){
-			$menu_items[] =	ElggMenuItem::factory(array("name" => "login",  "href" => "/login", "text" => elgg_echo("login")));
-		}
-		
-		return $menu_items;
-	}
 	
-	function theme_vab_prepare_owner_block_menu($hook, $entity_type, $returnvalue, $params) {
-		
-		if (isset($returnvalue["default"]) && ($page_owner = elgg_get_page_owner_entity()) && elgg_instanceof($page_owner, "group")) {
-			// prepend a link to the group profile
-			$group_profile = ElggMenuItem::factory(array(
-				"name" => "group_profile",
-				"text" => elgg_echo("groups:description"),
-				"href" => $page_owner->getURL()
-			));
-			if (current_page_url() == $page_owner->getURL()) {
-				$group_profile->setSelected();
-			}
-			array_unshift($returnvalue["default"], $group_profile);
-			
-			// append a link to the group members
-			$members = ElggMenuItem::factory(array(
-				"name" => "members",
-				"text" => elgg_echo("groups:members"),
-				"href" => "groups/members/" . $page_owner->getGUID()
-			));
-			if (current_page_url() == elgg_normalize_url("groups/members/" . $page_owner->getGUID())) {
-				$members->setSelected();
-			}
-			$returnvalue["default"][] = $members;
-		}
-		
-		
-		return $returnvalue;
-	}

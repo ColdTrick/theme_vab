@@ -72,21 +72,16 @@
 *************************************** */
 .elgg-table {
 	width: 100%;
-	border-top: 1px solid #ccc;
+	
 }
 .elgg-table td, .elgg-table th {
 	padding: 4px 8px;
-	border: 1px solid #ccc;
+	
 }
 .elgg-table th {
-	background-color: #ddd;
+	background-color: #<?php echo THEME_COLOR_4; ?>;
 }
-.elgg-table tr:nth-child(odd), .elgg-table tr.odd {
-	background-color: #fff;
-}
-.elgg-table tr:nth-child(even), .elgg-table tr.even {
-	background-color: #f0f0f0;
-}
+
 .elgg-table-alt {
 	width: 100%;
 	border-top: 1px solid #ccc;
@@ -267,21 +262,21 @@
 	background-color: white;
 }
 
+
 /* ***************************************
 	Tags
 *************************************** */
 .elgg-tags {
-	display: inline;
 	font-size: 85%;
 }
-.elgg-tags li {
-	display: inline;
+.elgg-tags > li {
+	float:left;
 	margin-right: 5px;
 }
-.elgg-tags li:after {
+.elgg-tags li.elgg-tag:after {
 	content: ",";
 }
-.elgg-tags li:last-child:after {
+.elgg-tags li.elgg-tag:last-child:after {
 	content: "";
 }
 .elgg-tagcloud {

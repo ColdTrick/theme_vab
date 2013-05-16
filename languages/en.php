@@ -2,6 +2,7 @@
 
 $english = array(
 
+	'theme_vab:menu:home' => "Home",
 	'theme_vab:menu:groups' => "Groepen (thema's)",
 	'theme_vab:menu:speerpunten:all' => 'All Speerpunten',
 	'theme_vab:menu:speerpunten:all:sidebar' => '',

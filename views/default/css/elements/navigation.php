@@ -448,7 +448,7 @@
 }
 
 .elgg-menu-footer-alt {
-	float: left;
+	float: right;
 }
 
 /* ***************************************
@@ -470,8 +470,7 @@
 *************************************** */
 <?php // height depends on line height/font size ?>
 .elgg-menu-entity, elgg-menu-annotation {
-	float: right;
-	margin-left: 15px;
+	text-align: right;
 	font-size: 90%;
 	color: #aaa;
 	line-height: 16px;
