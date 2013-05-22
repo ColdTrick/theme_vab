@@ -10,7 +10,13 @@
 	require_once(dirname(__FILE__) . "/lib/hooks.php");
 	
 	elgg_register_event_handler('init', 'system', 'theme_vab_init');
+	elgg_register_event_handler('plugins_boot', 'system', 'theme_vab_plugins_boot');
 	elgg_register_event_handler('pagesetup', 'system', 'theme_vab_pagesetup', 1000);
+	
+	function theme_vab_plugins_boot() {
+		// load custom translations for this theme
+		include_once(dirname(__FILE__) . "/vendors/theme_vab/languages/nl.php");
+	}
 	
 	function theme_vab_init() {
 		elgg_extend_view("css/elgg", "css/theme_vab/site");
@@ -18,7 +24,9 @@
 		
 		elgg_register_page_handler('profile', 'theme_vab_profile_page_handler');
 		
+		elgg_unregister_plugin_hook_handler('prepare', 'menu:site', 'elgg_site_menu_setup');
 		elgg_register_plugin_hook_handler("register", "menu:site", "theme_vab_setup_menu");
+		elgg_register_plugin_hook_handler("register", "menu:title", "theme_vab_register_title_menu");
 		elgg_register_plugin_hook_handler("prepare", "menu:owner_block", "theme_vab_prepare_owner_block_menu");
 		elgg_register_plugin_hook_handler("route", "best_practice", "theme_vab_route_best_practices_hook");
 	

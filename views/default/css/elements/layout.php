@@ -21,6 +21,7 @@
 	background: url(<?php echo THEME_GRAPHICS; ?>page-bg.png) no-repeat top center;
 	margin-top: 29px;
 	padding-top: 29px;
+	min-height: 855px;
 }
 .elgg-page-default .elgg-page-header > .elgg-inner {
 	width: 960px;
@@ -75,7 +76,7 @@
 /***** PAGE BODY LAYOUT ******/
 .elgg-layout {
 	width: 652px;
-	min-height: 550px;
+	min-height: 750px;
 	
 	float: right;
 	position: relative;
@@ -83,10 +84,10 @@
 
 .elgg-layout > .elgg-main {
 	float: right;
-	min-height: 590px;
-	width: 402px;
+	min-height: 735px;
+	width: 398px;
 	background: url(<?php echo THEME_GRAPHICS; ?>body-bg.png) repeat-y top right;
-	
+	padding-right: 12px;
 }
 
 .elgg-layout-one-sidebar {
@@ -120,7 +121,7 @@
 
 .elgg-layout > .elgg-main > .elgg-inner > h2,
 .elgg-main > .elgg-head {
-	margin: 0 0px 10px -20px;
+	margin: 0 -12px 10px -20px;
 	padding: 2px 10px 2px 20px;
 	background: #<?php echo THEME_COLOR_1; ?>;
 }

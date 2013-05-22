@@ -46,7 +46,7 @@
 	margin-bottom: 5px;
 }
 .elgg-item .elgg-content {
-	margin: 10px 5px;
+	margin: 10px 0px;
 }
 
 /* ***************************************
@@ -131,6 +131,10 @@
 }
 .elgg-state-notice {
 	background-color: #4690D6;
+}
+
+.elgg-message a {
+	color: white;
 }
 
 /* ***************************************

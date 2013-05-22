@@ -21,6 +21,7 @@ a {
 	
 }
 
+.elgg-main.elgg-body a,
 .elgg-main .elgg-body a {
 	text-decoration: underline;
 }
@@ -116,7 +117,6 @@ h6 { font-size: 0.8em; }
 	color: #666666;
 	font-size: 85%;
 	line-height: 1.2em;
-	font-style: italic;
 }
 
 .elgg-text-help {
@@ -167,6 +167,6 @@ h6 { font-size: 0.8em; }
 /* other */
 .elgg-layout > .elgg-main > h2 {
 	background: none repeat scroll 0 0 #<?php echo THEME_COLOR_1;?>;
-    margin: 0 0px 10px -20px;
-    padding: 2px 10px 5px;
+    margin: 0 -12px 10px -20px;
+    padding: 2px 10px 2px 20px;
 }

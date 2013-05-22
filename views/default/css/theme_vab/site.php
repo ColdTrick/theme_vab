@@ -148,8 +148,7 @@ form.elgg-search-header input[type="text"]:active {
 .theme-vab-one-column .elgg-layout,
 .theme-vab-one-column .elgg-layout > .elgg-main {
 	background: #<?php echo THEME_COLOR_1;?>;
-	width: 960px;
-	padding-left: 0px !important;
+	width: 938px;
 }
 
 .theme-vab-one-column .elgg-menu-filter-default {
@@ -160,12 +159,8 @@ form.elgg-search-header input[type="text"]:active {
 	display: none;
 }
 
-.theme-vab-best-practices-full-view .elgg-content > .elgg-image-block > .elgg-body > .elgg-subtext {
-	float: right;
-}
-
 .theme-vab-best-practices-full-view .elgg-sidebar {
-	padding-top: 4px;
+	padding-top: 34px;
 }
 
 .theme-vab-best-practices-full-view .elgg-module-aside {
@@ -176,6 +171,9 @@ form.elgg-search-header input[type="text"]:active {
 	display: none;
 }
 
+.theme-vab-best-practices-full-view .theme-vab-listing-group {
+	padding: 0;
+}
 .theme-vab-best-practices-full-view .theme-vab-listing-group .elgg-body h3{
 	font-size: 1em;
 }
@@ -193,6 +191,14 @@ form.elgg-search-header input[type="text"]:active {
 	float: inherit;
 }
 
+.best-practices-table .best-practices-nowrap a {
+	text-decoration: none;
+}
+
+li.elgg-menu-item-best-practice-logged-out a {
+	vertical-align: top;
+}
+
 .elgg-menu-site .elgg-menu-item-home {
 	margin-top: -52px;
 }
@@ -200,4 +206,12 @@ form.elgg-search-header input[type="text"]:active {
 .elgg-menu-site .elgg-menu-item-home a {
 	min-width: 85px;
 	background: #<?php echo THEME_COLOR_1; ?>;
+}
+
+.groups-latest-reply {
+	float: none;
+}
+
+.elgg-image-block .elgg-subtext {
+	margin: 10px 0px; 
 }

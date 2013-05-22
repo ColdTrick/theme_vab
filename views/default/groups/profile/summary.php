@@ -75,6 +75,6 @@ if ($description = $group->description){
 // 	$body .= "</div>";
 	
 // 	echo elgg_view_module("info", "", $body, array("header" => $header));
-echo $description;
+echo elgg_view("output/longtext", array("value" => $description));
 }
 

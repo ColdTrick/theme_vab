@@ -7,11 +7,13 @@
 		
 		if (empty($THEME_VAB_HIDE_SITE_MENU)) {
 			$menu_items[] = ElggMenuItem::factory(array("name" => "groups",  "href" => "groups/all", "text" => elgg_echo("theme_vab:menu:groups")));
-		
-			$menu_items[] = ElggMenuItem::factory(array("name" => "werkgroep",  "href" => "werkgroep", "text" => elgg_echo("theme_vab:menu:werkgroep")));
 			$menu_items[] = ElggMenuItem::factory(array("name" => "activity",  "href" => "activity?type=object", "text" => elgg_echo("theme_vab:menu:activity")));
-			$menu_items[] =	ElggMenuItem::factory(array("name" => "nieuws",  "href" => "search?q=nieuws&search_type=tags", "text" => elgg_echo("theme_vab:menu:nieuws")));
 			$menu_items[] =	ElggMenuItem::factory(array("name" => "best_practice",  "href" => "best_practice/all", "text" => elgg_echo("best_practices:menu:site")));
+			$menu_items[] = ElggMenuItem::factory(array("name" => "werkgroep",  "href" => "werkgroep", "text" => elgg_echo("theme_vab:menu:werkgroep")));
+			$menu_items[] = ElggMenuItem::factory(array("name" => "blogs",  "href" => "blog/all", "text" => elgg_echo("blog:blogs")));
+			$menu_items[] =	ElggMenuItem::factory(array("name" => "nieuws",  "href" => "search?q=nieuws&search_type=tags", "text" => elgg_echo("theme_vab:menu:nieuws")));
+			$menu_items[] =	ElggMenuItem::factory(array("name" => "help",  "href" => "groups/profile/19626862/hoe-werkt-deze-site", "text" => elgg_echo("theme_vab:menu:help")));
+			
 		
 			if(elgg_is_admin_logged_in()){
 				$menu_items[] =	ElggMenuItem::factory(array("name" => "admin",  "href" => "admin", "text" => elgg_echo("admin")));
@@ -21,7 +23,6 @@
 			}
 		} else {
 			$menu_items[] = ElggMenuItem::factory(array("name" => "home",  "href" => elgg_get_site_url(), "text" => elgg_echo("theme_vab:menu:home")));
-			
 		}
 	
 		return $menu_items;
@@ -85,3 +86,35 @@
 		
 		return $result;
 	}
+	
+	function theme_vab_register_title_menu($hook, $entity_type, $returnvalue, $params) {
+		$result = $returnvalue;
+		
+		if (!elgg_is_logged_in() && elgg_in_context("best_practice")) {
+			$page_url = current_page_url();
+			$site_url = elgg_get_site_url();
+			
+			$page_url = str_ireplace($site_url, "", $page_url);
+			
+			$special_pages = array(
+				"best_practice/all",
+				"best_practice/friends/",
+				"best_practice/owner/"
+			);
+			
+			foreach ($special_pages as $special_page) {
+				if (stristr($page_url, $special_page)) {
+					$result[] = ElggMenuItem::factory(array(
+						"name" => "best_practice_logged_out",
+						"text" => elgg_echo("theme_vab:comment:logged_out:body", array("<a href='" . $site_url . "login'>", "</a>")),
+						"href" => false
+					));
+					
+					break;
+				}
+			}
+		}
+		
+		return $result;
+	}
+	

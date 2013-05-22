@@ -29,6 +29,10 @@ a.elgg-button {
 	padding: 3px 6px;
 }
 
+.elgg-menu-title a.elgg-button {
+	text-decoration: none;
+}
+
 /* Submit: This button should convey, "you're about to take some definitive action" */
 .elgg-button-submit {
 	color: white;

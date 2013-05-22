@@ -42,26 +42,13 @@
 // 		$subtitle = $author . " " . $date . " " . $comments . " " . $categories;
 		$subtitle = $comments;
 		
-		// list target audience
-		$target_audience = "";
-		if($entity->target_audience) {
-			$target = $entity->target_audience;
-			if (!is_array($target)) {
-				$target = array($target);
-			}
-			
-			$target_audience = "<div>";
-			$target_audience .= elgg_echo("best_practices:edit:target_audience") . ": " . elgg_view("output/text", array("value" => implode(", ", $target)));
-			$target_audience .= "</div>";
-		}
-		
 		// build summary
 		$params = array(
 			"entity" => $entity,
 			"metadata" => $entity_menu,
 			"title" => false,
 			"subtitle" => $subtitle,
-			"content" => $target_audience . $organisation,
+			"content" => $organisation,
 			"tags" => false
 		);
 		
@@ -93,7 +80,7 @@
 				
 				$group_list = implode(", ", $group_list);
 			}
-			echo "<td rel='groups'>" . $group_list . "</td>";
+			echo "<td rel='groups' class='best-practices-entity-link'>" . $group_list . "</td>";
 			
 			$target_audience = "&nbsp;";
 			if ($entity->target_audience) {
@@ -108,7 +95,16 @@
 			
 			echo "<td rel='author'>" . $author_link . "</td>";
 			echo "<td rel='organisation'>" . $entity->organisation . "</td>";
-			echo "<td rel='tags'>" . elgg_view("output/tags", array("value" => $entity->tags)) . "</td>";
+			
+			$tags = "&nbsp;";
+			if ($entity->tags) {
+				$tags = $entity->tags;
+				if (!is_array($tags)) {
+					$tags = array($tags);
+				}
+				$tags = implode(", ", $tags);
+			}
+			echo "<td rel='tags' class='best-practices-entity-link'>" . $tags . "</td>";
 			echo "<td rel='created' class='best-practices-nowrap'>" . date(elgg_echo("best_practices:listing:date_format"), $entity->time_created) . "</td>";
 			
 			$comments = elgg_view("output/url", array("text" => $comment_count . "&nbsp;" . elgg_view_icon("speech-bubble"), "href" => $entity->getURL() . "#comments", "is_trusted" => true));

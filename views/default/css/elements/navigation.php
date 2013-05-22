@@ -288,6 +288,7 @@
 
 .elgg-menu-title {
 	float: right;
+	margin-right: -10px;
 }
 
 .elgg-menu-title > li {
