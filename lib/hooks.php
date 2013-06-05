@@ -11,7 +11,7 @@
 			$menu_items[] =	ElggMenuItem::factory(array("name" => "best_practice",  "href" => "best_practice/all", "text" => elgg_echo("best_practices:menu:site")));
 			$menu_items[] = ElggMenuItem::factory(array("name" => "werkgroep",  "href" => "werkgroep", "text" => elgg_echo("theme_vab:menu:werkgroep")));
 			$menu_items[] = ElggMenuItem::factory(array("name" => "blogs",  "href" => "blog/all", "text" => elgg_echo("blog:blogs")));
-			$menu_items[] =	ElggMenuItem::factory(array("name" => "nieuws",  "href" => "search?q=nieuws&search_type=tags", "text" => elgg_echo("theme_vab:menu:nieuws")));
+			$menu_items[] =	ElggMenuItem::factory(array("name" => "nieuws",  "href" => "search?q=nieuws", "text" => elgg_echo("theme_vab:menu:nieuws")));
 			$menu_items[] =	ElggMenuItem::factory(array("name" => "help",  "href" => "groups/profile/19626862/hoe-werkt-deze-site", "text" => elgg_echo("theme_vab:menu:help")));
 			
 		
