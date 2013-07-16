@@ -23,7 +23,7 @@
 #profile-details {
 	padding: 0 15px;
 }
-	
+
 #profile-details > h2 {
 	display: none;
 }
@@ -83,7 +83,7 @@ form.elgg-search-header input[type="text"]:active {
 	color: #<?php echo THEME_COLOR_2; ?>;
 }
 
-.search-heading-category, 
+.search-heading-category,
 .elgg-form-search-advanced-search {
 	display: none;
 }
@@ -123,7 +123,7 @@ form.elgg-search-header input[type="text"]:active {
 }
 
 .elgg-menu-item-access {
-	
+
 }
 
 #group_tools_status_open,
@@ -148,11 +148,16 @@ form.elgg-search-header input[type="text"]:active {
 .theme-vab-one-column .elgg-layout,
 .theme-vab-one-column .elgg-layout > .elgg-main {
 	background: #<?php echo THEME_COLOR_1;?>;
-	width: 938px;
+	width: 960px;
+	padding: 10px 0px;
 }
 
 .theme-vab-one-column .elgg-menu-filter-default {
 	display: none;
+}
+
+.theme-vab-one-column .elgg-menu-title {
+	margin: 0;
 }
 
 .theme-vab-best-practices-full-view .elgg-owner-block {
@@ -213,5 +218,5 @@ li.elgg-menu-item-best-practice-logged-out a {
 }
 
 .elgg-image-block .elgg-subtext {
-	margin: 10px 0px; 
+	margin: 10px 0px;
 }
