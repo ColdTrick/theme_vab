@@ -220,3 +220,12 @@ li.elgg-menu-item-best-practice-logged-out a {
 .elgg-image-block .elgg-subtext {
 	margin: 10px 0px;
 }
+
+.group-tools-suggested-groups .elgg-item {
+	width: 50%;
+}
+
+.group-tools-suggested-groups .elgg-item img {
+	max-width: 100px;
+	max-height: 100px;
+}
